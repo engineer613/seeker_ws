@@ -1,10 +1,10 @@
 # Seeker Workspace
 
-Seeker is a WIP project for GPS + IMU based autonomy software for RC Planes. The current plan is to use RealFlight Evolution to test out various modules and autonomy logic before running it on a real RC Plane with a BeagleBone Black on-board acting as a flight controller. 
+Seeker is a WIP project for GPS + IMU based autonomy software for RC Planes. The current plan is to use RealFlight Evolution as a high-fidelity simulator to test out various modules and autonomy logic before running it on a real RC Plane. A ROS2 based approach is planned for the initial simulation-based testing and validation of the autonomy features. 
 
-A ROS2 based approach is planned for the initial simulation-based testing and validation of the autonomy features. On-board the real RC plane, the BeagleBone Black will run an embedded version of the application that does not use ROS2.  
+The real RC Plane will have a BeagleBone Black (BBB) on-board acting as the flight controller. The BBB will run an embedded version of the application that does not use ROS2.  
 
-This repo is intended to be a mono-repo for the core C++ libraries as well as the ROS2 wrappers used for the simulation. More documentation with detailed information about the hardware build and electronics is currently in the works.
+This repo is intended to be a mono-repo for the core C++ libraries as well as the ROS2 wrappers used for the simulation. More documentation with detailed information about the hardware build and electronics for V1 build is currently in the works, lagging behind the autonomy software module development.
 
 ## Architecture
 
