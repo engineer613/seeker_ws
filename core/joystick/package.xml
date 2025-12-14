@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>joystick</name>
+  <version>0.1.0</version>
+  <description>Core joystick library</description>
+  <maintainer email="sai@todo.todo">Sai</maintainer>
+  <license>TODO: License declaration</license>
+
+  <buildtool_depend>cmake</buildtool_depend>
+
+  <export>
+    <build_type>cmake</build_type>
+  </export>
+</package>
