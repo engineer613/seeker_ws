@@ -1,6 +1,10 @@
 # Seeker Workspace
 
-A ROS2 workspace for the Seeker project with a clean separation between core C++ libraries and ROS2 wrappers.
+Seeker is a WIP project for GPS + IMU based autonomy software for RC Planes. The current plan is to use RealFlight Evolution to test out various modules and autonomy logic before running it on a real RC Plane with a BeagleBone Black on-board acting as a flight controller. 
+
+A ROS2 based approach is planned for the initial simulation-based testing and validation of the autonomy features. On-board the real RC plane, the BeagleBone Black will run an embedded version of the application that does not use ROS2.  
+
+This repo is intended to be a mono-repo for the core C++ libraries as well as the ROS2 wrappers used for the simulation. More documentation with detailed information about the hardware build and electronics is currently in the works.
 
 ## Architecture
 
@@ -11,7 +15,7 @@ seeker_ws/
 │   └── rf_interface/   # RF communication library
 ├── ros2/               # ROS2 wrappers (for simulation/testing)
 │   ├── joystick_ros/   # ROS2 wrapper for joystick
-│   ├── rf_interface_ros/  # ROS2 wrapper for RF interface
+│   ├── rf_interface_ros/  # ROS2 wrapper for RealFlight interface
 │   └── seeker_msgs/    # ROS2 message definitions
 └── src/                # Symlinks to ros2/ for colcon build
 ```
@@ -26,20 +30,7 @@ seeker_ws/
 ### Building for ROS2 (Simulation/Testing)
 
 ```bash
-cd ~/seeker_ws
-
-# First, build core libraries
-cd core/joystick
-mkdir -p build && cd build
-cmake .. && make && sudo make install
-cd ../../..
-
-cd core/rf_interface
-mkdir -p build && cd build
-cmake .. && make && sudo make install
-cd ../../..
-
-# Then build ROS2 packages
+# Build ROS2 packages from repo root
 colcon build
 
 # Source the workspace
